@@ -4,13 +4,13 @@ import { Particles } from '@/components/ui/shadcn-io/particles';
 
 export function Hero() {
   return (
-    <section id="hero" className="section relative" style={{background: 'linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 40%, var(--gradient-end) 100%)'}}>
-      <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, var(--glow-primary) 0%, transparent 70%)'}}></div>
+    <section id="hero" className="section relative" style={{background: 'white'}}>
+      <div className="absolute inset-0"></div>
       <Particles
         className="absolute inset-0"
         quantity={400}
         ease={80}
-        color="#ffffff"
+        color="#000000"
         staticity={20}
         size={1.2}
       />
@@ -39,7 +39,7 @@ export function Hero() {
               <span style={{color: 'var(--primary-dark)'}}>Evan Sinocchi</span>
             </h1>
             <p className="text-lg md:text-2xl lg:text-3xl mb-8 max-w-3xl leading-relaxed" style={{color: 'rgba(255,255,255,0.9)', textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
-              Passionate about solving <span style={{color: 'var(--hero-accent)', fontWeight: '600'}}>real problems that matter</span>.
+              <span style={{color: 'var(--primary)'}}>Passionate about solving</span> <span style={{color: 'var(--hero-accent)', fontWeight: '600'}}>real problems that matter</span>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
@@ -65,7 +65,7 @@ export function Hero() {
                 className="px-8 py-3 border-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
                 style={{
                   borderColor: 'var(--hero-accent)',
-                  color: 'white',
+                  color: 'var(--primary)',
                   backgroundColor: 'rgba(255,255,255,0.1)',
                   backdropFilter: 'blur(10px)',
                   boxShadow: '0 4px 15px var(--hero-accent)'
