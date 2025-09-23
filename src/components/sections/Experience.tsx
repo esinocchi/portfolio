@@ -10,43 +10,43 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    period: "2022 - Present",
+    title: "Data Science Intern",
+    company: "Tredence Inc.",
+    period: "Jun 2025 - Aug 2025",
     description: [
-      "Led development of enterprise web applications serving 100K+ users",
-      "Architected microservices infrastructure reducing system downtime by 40%",
-      "Mentored junior developers and established coding best practices"
+      "Increased housing price prediction accuracy by 10% R² and reduced RMSE by 15% through engineering 10+ new features and implementing an optimized CatBoost regressor in Python",
+      "Automated ingestion, cleaning, transformation, and validation of 25k+ housing records by building reproducible, modular data pipelines with Pandas and Scikit-Learn",
+      "Achieved 65% wine quality classification accuracy by designing and tuning a feedforward neural network with hyperparameter optimization and regularization on 4,800+ samples in Python using PyTorch",
+      "Reduced manual preprocessing time by 30% by engineering an internal-facing data pipeline in Python and Pandas that ingested, cleaned, and formatted raw client data for Tredence engineers"
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"]
+    technologies: ["Python" , "PyTorch", "Pandas", "NumPy", "Scikit-Learn"]
   },
   {
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    period: "2020 - 2022",
+    title: "Co-Founder & Engineer",
+    company: "Canvas ClassMate",
+    period: "Nov 2024 - Jul 2025",
     description: [
-      "Built responsive web applications from concept to deployment",
-      "Collaborated with design team to implement pixel-perfect UIs",
-      "Optimized application performance resulting in 50% faster load times"
+      "Reduced student information retrieval time by 60% within Canvas LMS by building AI-powered learning assistant with RAG, ETL pipeline, and vector database processing 300+ Canvas documents using Python",
+      "Improved search relevance by 40% by combining Qdrant semantic search, BM25 scoring, and multi-dimensional filtering for document similarity, and routing queries via a multi-agent system with OpenAI function calling",
+      "Deployed full-stack cloud architecture by implementing 8 API endpoints, AWS EC2 infrastructure with Qdrant vector database, FastAPI backend, and automated Canvas API synchronization"
     ],
-    technologies: ["React", "Express.js", "MongoDB", "TypeScript", "Vercel"]
+    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "OpenAI", "RAG", "ETL"]
   },
   {
-    title: "Frontend Developer",
-    company: "Digital Agency Pro",
-    period: "2019 - 2020",
+    title: "Technology Officer",
+    company: "ML@PSU",
+    period: "Jan 2025 - Present",
     description: [
-      "Developed client websites and web applications",
-      "Implemented responsive designs for mobile and desktop",
-      "Integrated third-party APIs and payment gateways"
+      "Set the direction for ML@PSU's Course Planning Assistant, measured by club alignment on goals by drafting the PRD and leading reviews with the executive board demonstrating product ownership and leadership",
+      "Built ML@PSU's Next.js site serving 100+ members by implementing responsive design and integrating event/membership systems, demonstrating front-end development skills"
     ],
-    technologies: ["HTML5", "CSS3", "JavaScript", "Vue.js", "Sass"]
+    technologies: ["Next.js", "React", "TypeScript", "JavaScript"]
   }
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="section bg-gray-50 dark:bg-gray-900">
+    <section id="experience" className="section bg-gray-50">
       <div className="container">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
@@ -62,22 +62,22 @@ export function Experience() {
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+                    <h3 className="text-xl font-bold text-gray-900">
                       {exp.title}
                     </h3>
-                    <h4 className="text-lg font-medium text-blue-600 dark:text-blue-400">
+                    <h4 className="text-lg font-medium" style={{color: 'var(--primary)'}}>
                       {exp.company}
                     </h4>
                   </div>
-                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
+                  <span className="text-sm font-medium text-gray-500 mt-2 md:mt-0">
                     {exp.period}
                   </span>
                 </div>
 
                 <ul className="space-y-2 mb-6">
                   {exp.description.map((item, i) => (
-                    <li key={i} className="text-gray-700 dark:text-gray-300 flex items-start">
-                      <span className="text-blue-500 mr-3 mt-2">•</span>
+                    <li key={i} className="text-gray-700 flex items-start">
+                      <span className="mr-3 mt-2" style={{color: 'var(--primary)'}}>•</span>
                       {item}
                     </li>
                   ))}
@@ -87,7 +87,11 @@ export function Experience() {
                   {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-sm font-medium"
+                      className="px-3 py-1 rounded text-sm font-medium"
+                      style={{
+                        backgroundColor: 'color-mix(in srgb, var(--primary) 15%, white)',
+                        color: 'var(--primary-dark)'
+                      }}
                     >
                       {tech}
                     </span>

@@ -55,18 +55,18 @@ export function Projects() {
                 className="card animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg mb-6 flex items-center justify-center">
+                <div className="h-48 rounded-lg mb-6 flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, var(--primary), var(--secondary))'}}>
                   <div className="text-white text-center">
                     <div className="text-4xl mb-2">🚀</div>
                     <div className="text-lg font-medium">{project.title}</div>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -74,7 +74,7 @@ export function Projects() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded text-sm font-medium"
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm font-medium"
                     >
                       {tech}
                     </span>
@@ -87,7 +87,15 @@ export function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-blue-500 hover:text-blue-500 rounded-lg font-medium transition-colors duration-300"
+                      className="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium transition-colors duration-300"
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--primary)';
+                        e.currentTarget.style.color = 'var(--primary)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = '';
+                        e.currentTarget.style.color = '';
+                      }}
                     >
                       GitHub
                     </a>
@@ -97,7 +105,10 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300"
+                      className="px-4 py-2 text-white rounded-lg font-medium transition-colors duration-300"
+                      style={{backgroundColor: 'var(--primary)'}}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--primary-dark)'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--primary)'}
                     >
                       Live Demo
                     </a>

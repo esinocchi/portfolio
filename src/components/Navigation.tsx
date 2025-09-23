@@ -58,7 +58,7 @@ export function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
+          ? 'bg-white/90 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -67,9 +67,11 @@ export function Navigation() {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-gray-900 dark:text-gray-100 hover:text-blue-600 transition-colors"
+            className="text-xl font-bold text-gray-900 transition-colors"
+            onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'}
+            onMouseLeave={(e) => e.currentTarget.style.color = ''}
           >
-            JD
+            ES
           </button>
 
           {/* Desktop Navigation */}
@@ -78,11 +80,20 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-300 ${
-                  activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
+                className="text-sm font-medium transition-colors duration-300"
+                style={{
+                  color: activeSection === item.id ? 'var(--primary)' : '',
+                }}
+                onMouseEnter={(e) => {
+                  if (activeSection !== item.id) {
+                    e.currentTarget.style.color = 'var(--primary)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeSection !== item.id) {
+                    e.currentTarget.style.color = '';
+                  }
+                }}
               >
                 {item.label}
               </button>
@@ -91,7 +102,7 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-700 dark:text-gray-300"
+            className="md:hidden p-2 text-gray-700"
             onClick={() => {
               // For now, just scroll to contact for mobile
               scrollToSection('contact');

@@ -6,10 +6,10 @@
   --foreground: #171717;
 
   /* Portfolio color palette */
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #ec4899;
-  --secondary-dark: #db2777;
+  --primary: #4578e6;
+  --primary-dark: #364a9a;
+  --secondary: #059669;
+  --secondary-dark: #047857;
   --accent: #10b981;
   --accent-dark: #059669;
   --neutral: #64748b;
@@ -73,28 +73,6 @@
   --color-error: var(--error);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Base dark mode colors */
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    /* Dark mode surface colors */
-    --surface: #111827;
-    --surface-secondary: #1f2937;
-    --surface-accent: #1f2937;
-
-    /* Dark mode borders and shadows */
-    --border: #374151;
-    --shadow: rgba(0, 0, 0, 0.3);
-    --shadow-lg: rgba(0, 0, 0, 0.5);
-
-    /* Dark mode text colors */
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-inverse: #1e293b;
-  }
-}
 
 body {
   background: var(--background);

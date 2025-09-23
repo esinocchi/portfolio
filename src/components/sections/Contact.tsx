@@ -36,14 +36,14 @@ const contactMethods: ContactMethod[] = [
 
 export function Contact() {
   return (
-    <section id="contact" className="section bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+    <section id="contact" className="section" style={{background: 'linear-gradient(to bottom right, color-mix(in srgb, var(--primary) 10%, white), color-mix(in srgb, var(--secondary) 15%, white))'}}>
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fade-in">
             Let's Work Together
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-16 max-w-2xl mx-auto animate-slide-up">
+          <p className="text-lg md:text-xl text-gray-700 mb-16 max-w-2xl mx-auto animate-slide-up">
             I'm always interested in new opportunities and exciting projects.
             Whether you have a question or just want to say hello, feel free to reach out!
           </p>
@@ -61,10 +61,10 @@ export function Contact() {
                 <div className="text-4xl mb-4 group-hover:animate-float">
                   {method.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="font-bold text-gray-900 mb-2">
                   {method.label}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                <p className="text-gray-600 text-sm">
                   {method.value}
                 </p>
               </a>
@@ -75,65 +75,76 @@ export function Contact() {
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent bg-white text-gray-900"
+                    onFocus={(e) => e.currentTarget.style.boxShadow = `0 0 0 2px var(--primary)`}
+                    onBlur={(e) => e.currentTarget.style.boxShadow = ''}
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent bg-white text-gray-900"
+                    onFocus={(e) => e.currentTarget.style.boxShadow = `0 0 0 2px var(--primary)`}
+                    onBlur={(e) => e.currentTarget.style.boxShadow = ''}
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent bg-white text-gray-900"
+                  onFocus={(e) => e.currentTarget.style.boxShadow = `0 0 0 2px var(--primary)`}
+                  onBlur={(e) => e.currentTarget.style.boxShadow = ''}
                   placeholder="Let's discuss..."
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent bg-white text-gray-900"
+                  onFocus={(e) => e.currentTarget.style.boxShadow = `0 0 0 2px var(--primary)`}
+                  onBlur={(e) => e.currentTarget.style.boxShadow = ''}
                   placeholder="Tell me about your project..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                className="w-full px-8 py-4 text-white rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
+                style={{backgroundColor: 'var(--primary)'}}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--primary-dark)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--primary)'}
               >
                 Send Message
               </button>
             </form>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <p className="text-gray-600 dark:text-gray-400">
+          <div className="mt-16 pt-8 border-t border-gray-200">
+            <p className="text-gray-600">
               © 2024 John Doe. Built with Next.js and Tailwind CSS.
             </p>
           </div>
