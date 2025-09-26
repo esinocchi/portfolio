@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export default function GiantCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [cursorType, setCursorType] = useState<'default' | 'pointer' | 'text'>('default');
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -42,10 +43,23 @@ export default function GiantCursor() {
       }
     };
 
+    const handleMouseEnter = () => {
+      setIsVisible(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsVisible(false);
+    };
+
+    // Add event listeners
     window.addEventListener('mousemove', updateCursor);
+    document.body.addEventListener('mouseenter', handleMouseEnter);
+    document.body.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       window.removeEventListener('mousemove', updateCursor);
+      document.body.removeEventListener('mouseenter', handleMouseEnter);
+      document.body.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 
@@ -91,7 +105,7 @@ export default function GiantCursor() {
   return (
     <div
       ref={cursorRef}
-      className="giant-cursor fixed pointer-events-none z-[10000] transition-transform duration-100"
+      className={`giant-cursor fixed pointer-events-none z-[10000] transition-transform duration-100 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       style={{ left: '-100px', top: '-100px' }}
       aria-hidden="true"
     >
