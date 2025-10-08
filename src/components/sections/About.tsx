@@ -23,6 +23,12 @@ const activityImages: ActivityImage[] = [
     alt: "Evan cooking in the kitchen",
     caption: "Creating something delicious",
     activity: "Cooking"
+  },
+  {
+    src: "/activities/weightlifting.png",
+    alt: "Evan weightlifting",
+    caption: "Building strength and power",
+    activity: "Weightlifting"
   }
 ];
 
@@ -61,7 +67,7 @@ export function About() {
               </div>
 
               {/* Activity Gallery */}
-              <div className="grid grid-cols-2 gap-6 mt-12">
+              <div className="grid grid-cols-3 gap-6 mt-12">
                 {activityImages.map((image, index) => (
                   <div
                     key={image.activity}
@@ -69,7 +75,7 @@ export function About() {
                     style={{ animationDelay: `${index * 0.2}s` }}
                   >
                     <div className="transition-all duration-300 group-hover:scale-105">
-                      <div className="relative w-full h-48">
+                      <div className={`relative w-full h-48 ${image.activity === 'Weightlifting' ? 'scale-140' : ''}`}>
                         <Image
                           src={image.src}
                           alt={image.alt}
@@ -87,26 +93,26 @@ export function About() {
             <div className="space-y-8 animate-slide-up lg:pl-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Hi, I'm Evan, a CS student at Penn State passionate about AI/ML software.
-                  I've built ML models at Tredence, co-founded Canvas ClassMate (AI learning assistant), and lead technical projects at ML@PSU.
+                  Hi, I'm Evan, a CS student at Penn State passionate about <strong>AI/ML software</strong>.
+                  I've built <strong>ML models @ Tredence</strong>, co-founded <strong>Canvas Classmate</strong>, and continue to extend my passion for AI/ML on campus through being <strong>Vice President of ML@PSU</strong>.
                   I love turning ideas into real solutions that help people.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  My passion for computer science began at 8, configuring plugins on my Minecraft server!
+                  My passion for computer science began when I was <strong>8 years old</strong>, configuring plugins on my Minecraft server!
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  In my free time, I love weightlifting, training Muay Thai, and cooking. These activities keep me balanced and teach me discipline, creativity, and perseverance—qualities I bring to my coding projects.
+                  In my free time, I love training <strong>muay thai</strong>, <strong>cooking</strong> and <strong>weightlifting</strong>. These activities keep me balanced and teach me discipline, creativity, and perseverance—qualities I bring to my coding projects.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Whether I'm debugging code, perfecting a new recipe, or mastering a technique in the gym, I approach every challenge with curiosity and determination.
+                  Whether I'm <strong>debugging code</strong>, perfecting a <strong>new recipe</strong>, or mastering my <strong>tomahawk elbow</strong> in Muay Thai, I approach every challenge with curiosity and determination.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-3 pt-4">
-                {['Problem Solving', 'Team Collaboration', 'Continuous Learning', 'User-Centric Design'].map((trait) => (
+                {['Problem Solving', 'Team Collaboration', 'Curiousity', 'Learning'].map((trait) => (
                   <span
                     key={trait}
                     className="px-4 py-2 rounded-full text-sm font-medium transition-transform duration-300 hover:scale-105"
