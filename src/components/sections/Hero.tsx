@@ -52,7 +52,7 @@ export function Hero() {
                     e.currentTarget.style.boxShadow = '0 4px 15px rgba(34, 54, 136, 0.3)';
                   }}
                 >
-                  View My Projects
+                  View some stuff I've built!
                 </a>
                 <a
                   href="#contact"

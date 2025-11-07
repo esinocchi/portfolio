@@ -10,27 +10,21 @@ interface ContactMethod {
 const contactMethods: ContactMethod[] = [
   {
     label: "Email",
-    value: "john.doe@example.com",
-    href: "mailto:john.doe@example.com",
+    value: "evan.sinocchi@gmail.com",
+    href: "mailto:evan.sinocchi@gmail.com",
     icon: "📧"
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/johndoe",
-    href: "https://linkedin.com/in/johndoe",
+    value: "linkedin.com/in/esinocchi",
+    href: "https://linkedin.com/in/esinocchi",
     icon: "💼"
   },
   {
     label: "GitHub",
-    value: "github.com/johndoe",
-    href: "https://github.com/johndoe",
+    value: "github.com/esinocchi",
+    href: "https://github.com/esinocchi",
     icon: "🐙"
-  },
-  {
-    label: "Location",
-    value: "San Francisco, CA",
-    href: "#",
-    icon: "📍"
   }
 ];
 
@@ -48,7 +42,7 @@ export function Contact() {
             Whether you have a question or just want to say hello, feel free to reach out!
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {contactMethods.map((method, index) => (
               <a
                 key={method.label}
@@ -73,7 +67,7 @@ export function Contact() {
 
           <div className="mt-16 pt-8 border-t border-gray-200">
             <p className="text-gray-600">
-              © 2024 John Doe. Built with Next.js and Tailwind CSS.
+              © 2025 Evan Sinocchi. Built with Next.js and Tailwind CSS.
             </p>
           </div>
         </div>

@@ -4,7 +4,7 @@ interface ExperienceItem {
   title: string;
   company: string;
   period: string;
-  description: string[];
+  description: string;
   technologies: string[];
   logo: string;
 }
@@ -14,36 +14,24 @@ const experiences: ExperienceItem[] = [
     title: "Machine Learning Engineer Intern",
     company: "Tredence Inc.",
     period: "Jun 2025 - Aug 2025",
-    description: [
-      "Accelerated model development and aligned the team on preprocessing 84k rows of data through delivering apip-installable cleaning package with tagged releases and CI/CD in Python using pandas and scikit-learn",
-      "Automated ingestion, cleaning, transformation, and validation of 25k+ housing records by building reproducible, modular data pipelines with Pandas and Scikit-Learn",
-      "Achieved 65% wine quality classification accuracy by designing and tuning a feedforward neural network with hyperparameter optimization and regularization on 4,800+ samples in Python using PyTorch",
-      "Reduced manual preprocessing time by 30% by engineering an internal-facing data pipeline in Python and Pandas that ingested, cleaned, and formatted raw client data for Tredence engineers"
-    ],
-    technologies: ["Python" , "PyTorch", "Pandas", "NumPy", "Scikit-Learn"],
+    description: "Built a pip-installable data cleaning package and a CatBoost home-price forecasting model that achieved 89.8% R2 on client data",
+    technologies: ["Python", "Pandas", "Scikit-Learn", "CatBoost", "PyTorch", "CI/CD Pipelines"],
     logo: "/tredence-logo.png"
   },
   {
-    title: "Co-Founder & Engineer",
+    title: "Co-Founder, Software Engineer",
     company: "Canvas ClassMate",
     period: "Nov 2024 - Jul 2025",
-    description: [
-      "Reduced student information retrieval time by 60% within Canvas LMS by building AI-powered learning assistant with RAG, ETL pipeline, and vector database processing 300+ Canvas documents using Python",
-      "Improved search relevance by 40% by combining Qdrant semantic search, BM25 scoring, and multi-dimensional filtering for document similarity, and routing queries via a multi-agent system with OpenAI function calling",
-      "Deployed full-stack cloud architecture by implementing 8 API endpoints, AWS EC2 infrastructure with Qdrant vector database, FastAPI backend, and automated Canvas API synchronization"
-    ],
-    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "OpenAI", "RAG", "ETL"],
+    description: "Built an AI assistant for Canvas LMS that cut search time from 23s to 9s using hybrid retrieval with Qdrant and OpenAI",
+    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "ChromaDB", "Canvas API"],
     logo: "/canvas-classmate-logo.png"
   },
   {
-    title: "Technology Officer",
-    company: "ML@PSU",
-    period: "Jan 2025 - Present",
-    description: [
-      "Set the direction for ML@PSU's Course Planning Assistant, measured by club alignment on goals by drafting the PRD and leading reviews with the executive board demonstrating product ownership and leadership",
-      "Built ML@PSU's Next.js site serving 100+ members by implementing responsive design and integrating event/membership systems, demonstrating front-end development skills"
-    ],
-    technologies: ["Next.js", "React", "TypeScript", "JavaScript"],
+    title: "Vice President",
+    company: "Machine Learning at Penn State",
+    period: "Sep 2025 - Present",
+    description: "Lead bi-monthly sessions on real-world ML applications and authored the PRD for our Course Planning Assistant project",
+    technologies: ["Leadership", "Product Management", "ML Education"],
     logo: "/mlpsu-logo.png"
   }
 ];
@@ -69,7 +57,11 @@ export function Experience() {
                     <img
                       src={exp.logo}
                       alt={`${exp.company} logo`}
-                      className="w-12 h-12 object-contain rounded"
+                      className="object-contain rounded"
+                      style={{
+                        width: exp.company === "Canvas ClassMate" ? "62px" : "48px",
+                        height: exp.company === "Canvas ClassMate" ? "62px" : "48px"
+                      }}
                     />
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">
@@ -85,14 +77,9 @@ export function Experience() {
                   </span>
                 </div>
 
-                <ul className="space-y-2 mb-6">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-gray-700 flex items-start">
-                      <span className="mr-3 mt-2" style={{color: 'var(--primary)'}}>•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  {exp.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech) => (

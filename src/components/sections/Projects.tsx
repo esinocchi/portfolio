@@ -12,20 +12,22 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Canvas Classmate",
-    description: "AI Powered Canvas Assistant that helps students manage their coursework, assignments, and academic schedule. Leverages artificial intelligence to provide intelligent recommendations and insights.",
-    technologies: ["Python", "AI/ML", "Canvas API"],
-    githubUrl: "https://github.com/esinocchi/Canvas-Classmate"
+    description: "AI-powered learning assistant for Canvas LMS that cut search time from 23s to 9s using RAG architecture with Qdrant and OpenAI",
+    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "ChromaDB", "Canvas API"],
+    githubUrl: "https://github.com/esinocchi/Canvas-Classmate",
+    liveUrl: "https://youtu.be/DJJkvD2E_jo"
   },
   {
-    title: "Natural Disaster Dashboard",
-    description: "A comprehensive dashboard for tracking and visualizing natural disasters in real-time. Provides critical information and analytics for disaster response and awareness.",
-    technologies: ["Python", "Data Visualization", "APIs"],
-    githubUrl: "https://github.com/esinocchi/Natural-Disaster-Dashboard"
+    title: "Natural Disaster Dashboard - HackPSU 1st Overall",
+    description: "Won 1st place at HackPSU Fall 2024 building an emergency-response dashboard with FEMA, Google Maps, and utility APIs",
+    technologies: ["Python", "TypeScript", "React", "Next.js", "FEMA API"],
+    githubUrl: "https://github.com/esinocchi/Natural-Disaster-Dashboard",
+    liveUrl: "https://milton-sos.vercel.app/"
   },
   {
-    title: "MNIST Classification",
-    description: "A machine learning project implementing neural networks to classify handwritten digits from the MNIST dataset. Demonstrates fundamental deep learning concepts and techniques.",
-    technologies: ["Python", "TensorFlow/PyTorch", "Jupyter Notebook"],
+    title: "Convolutional Neural Network for Handwritten Digits",
+    description: "Built a CNN achieving 99.25% accuracy on MNIST with PyTorch, and implemented neural networks from scratch using pure NumPy",
+    technologies: ["Python", "PyTorch", "NumPy"],
     githubUrl: "https://github.com/esinocchi/MNIST-Classification"
   }
 ];
@@ -46,13 +48,6 @@ export function Projects() {
                 className="card animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="h-48 rounded-lg mb-6 flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, var(--primary), var(--secondary))'}}>
-                  <div className="text-white text-center">
-                    <div className="text-4xl mb-2">🚀</div>
-                    <div className="text-lg font-medium">{project.title}</div>
-                  </div>
-                </div>
-
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {project.title}
                 </h3>
@@ -65,7 +60,11 @@ export function Projects() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded text-sm font-medium"
+                      className="px-3 py-1 rounded text-sm font-medium"
+                      style={{
+                        backgroundColor: 'color-mix(in srgb, var(--primary) 15%, white)',
+                        color: 'var(--primary-dark)'
+                      }}
                     >
                       {tech}
                     </span>
@@ -78,16 +77,14 @@ export function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-medium transition-colors duration-300"
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--primary)';
-                        e.currentTarget.style.color = 'var(--primary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = '';
-                        e.currentTarget.style.color = '';
-                      }}
+                      className="px-4 py-2 text-white rounded-lg font-medium transition-colors duration-300 text-center flex items-center gap-2"
+                      style={{backgroundColor: '#24292e'}}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1a1e22'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#24292e'}
                     >
+                      <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                      </svg>
                       GitHub
                     </a>
                   )}
@@ -96,12 +93,22 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 text-white rounded-lg font-medium transition-colors duration-300"
-                      style={{backgroundColor: 'var(--primary)'}}
-                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--primary-dark)'}
-                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--primary)'}
+                      className="px-4 py-2 text-white rounded-lg font-medium transition-colors duration-300 text-center flex items-center gap-2"
+                      style={{backgroundColor: project.title === "Canvas Classmate" ? '#FF0000' : 'var(--primary)'}}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = project.title === "Canvas Classmate" ? '#CC0000' : 'var(--primary-dark)'}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = project.title === "Canvas Classmate" ? '#FF0000' : 'var(--primary)'}
                     >
-                      Live Demo
+                      {project.title === "Canvas Classmate" && (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                      )}
+                      {project.title === "Natural Disaster Dashboard - HackPSU 1st Overall" && (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M3 3h18v2H3V3m1 4h16v2H4V7m2 4h12v2H6v-2m2 4h8v2H8v-2m2 4h4v2h-4v-2m1 4h2v2h-2v-2z"/>
+                        </svg>
+                      )}
+                      {project.title === "Canvas Classmate" ? "Demo" : project.title === "Natural Disaster Dashboard - HackPSU 1st Overall" ? "View Site" : "Live Demo"}
                     </a>
                   )}
                 </div>
