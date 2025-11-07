@@ -11,31 +11,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-    githubUrl: "https://github.com/johndoe/ecommerce-platform",
-    liveUrl: "https://ecommerce-demo.com"
+    title: "Canvas Classmate",
+    description: "AI Powered Canvas Assistant that helps students manage their coursework, assignments, and academic schedule. Leverages artificial intelligence to provide intelligent recommendations and insights.",
+    technologies: ["Python", "AI/ML", "Canvas API"],
+    githubUrl: "https://github.com/esinocchi/Canvas-Classmate"
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, team workspaces, and productivity analytics. Features drag-and-drop interface and notification system.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Material-UI"],
-    githubUrl: "https://github.com/johndoe/task-manager",
-    liveUrl: "https://taskmanager-demo.com"
+    title: "Natural Disaster Dashboard",
+    description: "A comprehensive dashboard for tracking and visualizing natural disasters in real-time. Provides critical information and analytics for disaster response and awareness.",
+    technologies: ["Python", "Data Visualization", "APIs"],
+    githubUrl: "https://github.com/esinocchi/Natural-Disaster-Dashboard"
   },
   {
-    title: "Weather Dashboard",
-    description: "A responsive weather dashboard that provides current conditions, forecasts, and weather maps. Includes location-based services and customizable widgets.",
-    technologies: ["Vue.js", "Express.js", "Weather API", "Chart.js", "SCSS"],
-    githubUrl: "https://github.com/johndoe/weather-dashboard",
-    liveUrl: "https://weather-demo.com"
-  },
-  {
-    title: "Social Media Analytics",
-    description: "A comprehensive analytics dashboard for social media managers to track engagement, audience growth, and content performance across multiple platforms.",
-    technologies: ["React", "Python", "FastAPI", "Redis", "D3.js"],
-    githubUrl: "https://github.com/johndoe/social-analytics"
+    title: "MNIST Classification",
+    description: "A machine learning project implementing neural networks to classify handwritten digits from the MNIST dataset. Demonstrates fundamental deep learning concepts and techniques.",
+    technologies: ["Python", "TensorFlow/PyTorch", "Jupyter Notebook"],
+    githubUrl: "https://github.com/esinocchi/MNIST-Classification"
   }
 ];
 

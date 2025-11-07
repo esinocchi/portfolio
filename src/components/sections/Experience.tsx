@@ -6,20 +6,22 @@ interface ExperienceItem {
   period: string;
   description: string[];
   technologies: string[];
+  logo: string;
 }
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Data Science Intern",
+    title: "Machine Learning Engineer Intern",
     company: "Tredence Inc.",
     period: "Jun 2025 - Aug 2025",
     description: [
-      "Increased housing price prediction accuracy by 10% R² and reduced RMSE by 15% through engineering 10+ new features and implementing an optimized CatBoost regressor in Python",
+      "Accelerated model development and aligned the team on preprocessing 84k rows of data through delivering apip-installable cleaning package with tagged releases and CI/CD in Python using pandas and scikit-learn",
       "Automated ingestion, cleaning, transformation, and validation of 25k+ housing records by building reproducible, modular data pipelines with Pandas and Scikit-Learn",
       "Achieved 65% wine quality classification accuracy by designing and tuning a feedforward neural network with hyperparameter optimization and regularization on 4,800+ samples in Python using PyTorch",
       "Reduced manual preprocessing time by 30% by engineering an internal-facing data pipeline in Python and Pandas that ingested, cleaned, and formatted raw client data for Tredence engineers"
     ],
-    technologies: ["Python" , "PyTorch", "Pandas", "NumPy", "Scikit-Learn"]
+    technologies: ["Python" , "PyTorch", "Pandas", "NumPy", "Scikit-Learn"],
+    logo: "/tredence-logo.png"
   },
   {
     title: "Co-Founder & Engineer",
@@ -30,7 +32,8 @@ const experiences: ExperienceItem[] = [
       "Improved search relevance by 40% by combining Qdrant semantic search, BM25 scoring, and multi-dimensional filtering for document similarity, and routing queries via a multi-agent system with OpenAI function calling",
       "Deployed full-stack cloud architecture by implementing 8 API endpoints, AWS EC2 infrastructure with Qdrant vector database, FastAPI backend, and automated Canvas API synchronization"
     ],
-    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "OpenAI", "RAG", "ETL"]
+    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "OpenAI", "RAG", "ETL"],
+    logo: "/canvas-classmate-logo.png"
   },
   {
     title: "Technology Officer",
@@ -40,7 +43,8 @@ const experiences: ExperienceItem[] = [
       "Set the direction for ML@PSU's Course Planning Assistant, measured by club alignment on goals by drafting the PRD and leading reviews with the executive board demonstrating product ownership and leadership",
       "Built ML@PSU's Next.js site serving 100+ members by implementing responsive design and integrating event/membership systems, demonstrating front-end development skills"
     ],
-    technologies: ["Next.js", "React", "TypeScript", "JavaScript"]
+    technologies: ["Next.js", "React", "TypeScript", "JavaScript"],
+    logo: "/mlpsu-logo.png"
   }
 ];
 
@@ -61,13 +65,20 @@ export function Experience() {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {exp.title}
-                    </h3>
-                    <h4 className="text-lg font-medium" style={{color: 'var(--primary)'}}>
-                      {exp.company}
-                    </h4>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      className="w-12 h-12 object-contain rounded"
+                    />
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">
+                        {exp.title}
+                      </h3>
+                      <h4 className="text-lg font-medium" style={{color: 'var(--primary)'}}>
+                        {exp.company}
+                      </h4>
+                    </div>
                   </div>
                   <span className="text-sm font-medium text-gray-500 mt-2 md:mt-0">
                     {exp.period}
