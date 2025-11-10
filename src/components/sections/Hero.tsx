@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/shadcn-io/background-gradient';
 import { AuroraBackground } from '@/components/ui/shadcn-io/aurora-background';
 
@@ -18,10 +19,12 @@ export function Hero() {
                   animate={true}
                 >
                   <div className="w-full h-full rounded-full overflow-hidden aspect-square">
-                    <img
+                    <Image
                       src="/profile.jpg"
                       alt="Evan Sinocchi"
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      width={256}
+                      height={256}
                     />
                   </div>
                 </BackgroundGradient>
@@ -29,7 +32,7 @@ export function Hero() {
             </div>
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
-                <span style={{color: 'var(--text-primary)'}}>Hey, I'm </span>
+                <span style={{color: 'var(--text-primary)'}}>Hey, I&apos;m </span>
                 <span style={{color: 'var(--primary-dark)'}}>Evan Sinocchi</span>
               </h1>
               <p className="text-lg md:text-2xl lg:text-3xl mb-8 max-w-3xl font-bold leading-relaxed" style={{color: 'rgba(255,255,255,0.9)', textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
@@ -52,7 +55,7 @@ export function Hero() {
                     e.currentTarget.style.boxShadow = '0 4px 15px rgba(34, 54, 136, 0.3)';
                   }}
                 >
-                  View some stuff I've built!
+                  View some stuff I&apos;ve built!
                 </a>
                 <a
                   href="#contact"

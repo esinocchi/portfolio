@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface ExperienceItem {
   title: string;
   company: string;
@@ -54,14 +56,12 @@ export function Experience() {
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div className="flex items-center gap-4">
-                    <img
+                    <Image
                       src={exp.logo}
                       alt={`${exp.company} logo`}
                       className="object-contain rounded"
-                      style={{
-                        width: exp.company === "Canvas ClassMate" ? "62px" : "48px",
-                        height: exp.company === "Canvas ClassMate" ? "62px" : "48px"
-                      }}
+                      width={exp.company === "Canvas ClassMate" ? 62 : 48}
+                      height={exp.company === "Canvas ClassMate" ? 62 : 48}
                     />
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">

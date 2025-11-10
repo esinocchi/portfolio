@@ -34,11 +34,11 @@ export function Contact() {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fade-in">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
 
           <p className="text-lg md:text-xl text-gray-700 mb-16 max-w-2xl mx-auto animate-slide-up">
-            I'm always interested in new opportunities and exciting projects.
+            I&apos;m always interested in new opportunities and exciting projects.
             Whether you have a question or just want to say hello, feel free to reach out!
           </p>
 

@@ -60,7 +60,7 @@ export function About() {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end">
                   <div className="p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-2xl font-bold mb-2">Hey, I'm Evan!</h3>
+                    <h3 className="text-2xl font-bold mb-2">Hey, I&apos;m Evan!</h3>
                     <p className="text-lg">CS student passionate about AI/ML and building real solutions</p>
                   </div>
                 </div>
@@ -93,21 +93,16 @@ export function About() {
             <div className="space-y-8 animate-slide-up lg:pl-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Hi, I'm Evan, a CS student at Penn State passionate about <strong>AI/ML software</strong>.
-                  I've built <strong>ML models @ Tredence</strong>, co-founded <strong>Canvas Classmate</strong>, and continue to extend my passion for AI/ML on campus through being <strong>Vice President of ML@PSU</strong>.
-                  I love turning ideas into real solutions that help people.
+                  Hi, I&apos;m Evan, a CS student at Penn State passionate about <strong>AI/ML software</strong>.
+                  I&apos;ve built <strong>ML models @ Tredence</strong>, co-founded <strong>Canvas Classmate</strong>, and serve as <strong>Vice President of ML@PSU</strong>.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  My passion for computer science began when I was <strong>8 years old</strong>, configuring plugins on my Minecraft server!
+                  My passion for computer science began at age <strong>8</strong>, configuring plugins on my Minecraft server!
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  In my free time, I love training <strong>muay thai</strong>, <strong>cooking</strong> and <strong>weightlifting</strong>. These activities keep me balanced and teach me discipline, creativity, and perseverance—qualities I bring to my coding projects.
-                </p>
-
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Whether I'm <strong>debugging code</strong>, perfecting a <strong>new recipe</strong>, or mastering my <strong>tomahawk elbow</strong> in Muay Thai, I approach every challenge with curiosity and determination.
+                  In my free time, I train <strong>muay thai</strong>, <strong>cook</strong>, and <strong>weightlift</strong>. These activities teach me discipline and perseverance I bring to my coding.
                 </p>
               </div>
 
