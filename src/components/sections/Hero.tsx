@@ -31,13 +31,10 @@ export function Hero() {
               </div>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animate-slide-up">
                 <span style={{color: 'var(--text-primary)'}}>Hey, I&apos;m </span>
                 <span style={{color: 'var(--primary-dark)'}}>Evan Sinocchi</span>
               </h1>
-              <p className="text-lg md:text-2xl lg:text-3xl mb-8 max-w-3xl font-bold leading-relaxed" style={{color: 'rgba(255,255,255,0.9)', textShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
-                <span style={{color: 'var(--text-primary)'}}>Passionate about solving</span> <span style={{color: 'var(--primary-dark)', fontWeight: '600'}}>real problems that matter</span>.
-              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <a
                   href="#projects"

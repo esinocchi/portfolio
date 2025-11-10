@@ -102,7 +102,7 @@ export function About() {
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  In my free time, I train <strong>muay thai</strong>, <strong>cook</strong>, and <strong>weightlift</strong>. These activities teach me discipline and perseverance I bring to my coding.
+                  In my free time, I train <strong>muay thai</strong>, <strong>cook</strong>, and <strong>weightlift</strong>. These activities teach me discipline and perseverance I bring to my software engineering.
                 </p>
               </div>
 
