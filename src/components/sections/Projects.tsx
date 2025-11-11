@@ -8,6 +8,7 @@ interface Project {
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  devpostUrl?: string;
   imageUrl?: string;
 }
 
@@ -26,6 +27,7 @@ const projects: Project[] = [
     technologies: ["Python", "TypeScript", "ReactJS", "FEMA API", "TailwindCSS"],
     githubUrl: "https://github.com/esinocchi/Natural-Disaster-Dashboard",
     liveUrl: "https://milton-sos.vercel.app/",
+    devpostUrl: "https://devpost.com/software/hurricane-dashboard",
     imageUrl: "/projects/disaster-dashboard.png"
   },
   {
@@ -34,6 +36,14 @@ const projects: Project[] = [
     technologies: ["Python", "PyTorch", "NumPy"],
     githubUrl: "https://github.com/esinocchi/MNIST-Classification",
     imageUrl: "/projects/mnist-cnn.png"
+  },
+  {
+    title: "Buddy",
+    description: "AI-powered chatbot for Penn State students featuring RAG with Pinecone for PSU-specific knowledge, streaming responses, and local multi-threaded conversations",
+    technologies: ["Next.js", "React", "TypeScript", "OpenAI API", "Pinecone", "LangChain"],
+    githubUrl: "https://github.com/esinocchi/chat.mlpsu.org",
+    liveUrl: "https://buddy.mlpsu.org/",
+    imageUrl: "/projects/buddy.png"
   }
 ];
 
@@ -128,7 +138,23 @@ export function Projects() {
                             className="flex-shrink-0"
                           />
                         )}
-                        {project.title === "Canvas Classmate" ? "Demo" : project.title === "Natural Disaster Dashboard" ? "View Site" : "Live Demo"}
+                        {project.title === "Canvas Classmate" ? "Demo" : project.title === "Natural Disaster Dashboard" ? "View Site" : "View Site"}
+                      </a>
+                    )}
+                    {project.devpostUrl && (
+                      <a
+                        href={project.devpostUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 text-white rounded-lg font-medium transition-colors duration-300 text-center flex items-center gap-2"
+                        style={{backgroundColor: '#003E54'}}
+                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#00283A'}
+                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#003E54'}
+                      >
+                        <svg width="20" height="20" viewBox="0 0 280 280" fill="currentColor">
+                          <path d="M140 0C62.8 0 0 62.8 0 140s62.8 140 140 140 140-62.8 140-140S217.2 0 140 0zm58.9 162.1c-4.1 15.6-14.1 29.1-28.1 37.8-14 8.7-30.5 12.4-46.6 10.4-16.1-2-31.2-10.2-42.4-23.1-11.2-12.9-18.1-29.4-19.4-46.6-1.3-17.2 3.1-34.5 12.4-48.8 9.3-14.3 22.9-25.4 38.4-31.3 15.5-5.9 32.4-6.9 48.6-2.8 16.2 4.1 30.9 13.1 41.6 25.4l-25.8 25.8c-6.4-7.4-15.2-12.7-24.9-15-9.7-2.3-20-1.9-29.5 1.2-9.5 3.1-18 9.1-24.1 17-6.1 7.9-9.8 17.4-10.5 27.3-.7 9.9 1.5 19.8 6.2 28.6 4.7 8.8 11.9 16.1 20.5 21 8.6 4.9 18.5 7.2 28.4 6.5 9.9-.7 19.5-4.4 27.5-10.5 8-6.1 14.1-14.5 17.3-24h-44.8v-36.5h82.2c1 5.4 1.5 10.9 1.5 16.4 0 17.1-4.5 33.8-12.5 48.7z"/>
+                        </svg>
+                        Devpost
                       </a>
                     )}
                   </div>
