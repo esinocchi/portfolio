@@ -25,6 +25,7 @@ const bricolage_grotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: "Evan Sinocchi",
   description: "Portfolio of Evan Sinocchi",
   openGraph: {

@@ -13,6 +13,7 @@ const navItems = [
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +52,7 @@ export function Navigation() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -102,16 +104,32 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-gray-700"
-            onClick={() => {
-              // For now, just scroll to contact for mobile
-              scrollToSection('contact');
-            }}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-md shadow-lg rounded-lg mt-2 py-4">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-4 py-3 text-sm font-medium transition-colors duration-300"
+                style={{
+                  color: activeSection === item.id ? 'var(--primary)' : '#374151',
+                  backgroundColor: activeSection === item.id ? '#f3f4f6' : 'transparent',
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );
