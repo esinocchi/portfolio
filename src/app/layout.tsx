@@ -26,7 +26,30 @@ const bricolage_grotesque = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: "Evan Sinocchi",
-  description: "Portfolio of Evan Sinocchi, a passionate full stack developer specializing in React, Node.js, and modern web technologies. Explore my projects, experience, and skills.",
+  description: "Portfolio of Evan Sinocchi",
+  openGraph: {
+    title: "Evan Sinocchi",
+    description: "Evan Sinocchi",
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Evan Sinocchi",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Evan Sinocchi",
+    description: "Evan Sinocchi",
+    images: [
+      {
+        url: "/profile.jpg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
