@@ -17,7 +17,7 @@ const experiences: ExperienceItem[] = [
     company: "Truvo Insurance",
     period: "Oct 2025 - Nov 2025",
     description: "Enabled increased insurance premiums by building Twilio-based WhatsApp and Messenger quote workflows that used a state-machine–guided LLM to complete quotes in ~2 minutes.",
-    technologies: ["TypeScript", "Next.js", "React", "Twilio", "Tool Calling"],
+    technologies: ["TypeScript", "Next.js", "React", "Twilio", "OpenAI Tool Calling"],
     logo: "/truvo.jpeg"
   },
   {
