@@ -94,7 +94,7 @@ export function About() {
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Hi, I&apos;m Evan, a CS student at Penn State passionate about <strong>AI/ML software</strong>.
-                  I&apos;ve built <strong>ML models @ Tredence</strong>, co-founded <strong>Canvas Classmate</strong>, and serve as <strong>Vice President of ML@PSU</strong>.
+                  I&apos;ve built <strong>automated</strong> insurance quote workflows @ Truvo, <strong>ML models @ Tredence</strong>, co-founded <strong>Canvas Classmate</strong>, and serve as <strong>Vice President of ML@PSU</strong>.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
