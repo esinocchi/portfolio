@@ -13,6 +13,14 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    title: "Incoming AI Engineer Co-Op",
+    company: "IBM",
+    period: "May 2026 - May 2027",
+    description: "Will be working on a team that builds AI-powered software for IBM's clients.",
+    technologies: [],
+    logo: "/ibm-logo.jpg"
+  },
+  {
     title: "Software Engineer",
     company: "Truvo Insurance",
     period: "Oct 2025 - Nov 2025",
@@ -67,9 +75,9 @@ export function Experience() {
                     <Image
                       src={exp.logo}
                       alt={`${exp.company} logo`}
-                      className="object-contain rounded"
-                      width={exp.company === "Canvas ClassMate" ? 62 : 48}
-                      height={exp.company === "Canvas ClassMate" ? 62 : 48}
+                      className={`object-contain rounded`}
+                      width={exp.company === "IBM" ? 48 : exp.company === "Canvas ClassMate" ? 62 : 48}
+                      height={exp.company === "IBM" ? 48 : exp.company === "Canvas ClassMate" ? 62 : 48}
                     />
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">
