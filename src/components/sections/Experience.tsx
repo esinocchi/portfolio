@@ -13,7 +13,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Incoming AI Engineer Co-Op",
+    title: "Incoming AI Engineer",
     company: "IBM",
     period: "May 2026 - May 2027",
     description: "Will be working on a team that builds AI-powered software for IBM's clients.",
