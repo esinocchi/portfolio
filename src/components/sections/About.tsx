@@ -93,8 +93,8 @@ export function About() {
             <div className="space-y-8 animate-slide-up lg:pl-8">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Hi, I&apos;m Evan, a CS student at Penn State passionate about <strong>AI/ML software</strong>.
-                  I&apos;ve built <strong>automated</strong> insurance quote workflows @ Truvo, <strong>ML models @ Tredence</strong>, co-founded <strong>Canvas Classmate</strong>, and serve as <strong>Vice President of ML@PSU</strong>.
+                  Hi, I&apos;m Evan, a CS student at Penn State building <strong>high-impact AI software</strong>.
+                  I currently work as a <strong>Forward Deployed Engineer Co-Op at IBM</strong> and a <strong>Founding Engineer at Fort Gamma</strong>, where I build production systems from architecture through deployment.
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -102,7 +102,7 @@ export function About() {
                 </p>
 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  In my free time, I train <strong>muay thai</strong>, <strong>cook</strong>, and <strong>weightlift</strong>. These activities teach me discipline and perseverance I bring to my software engineering.
+                  Previously, I built production quote-intake systems at <strong>Truvo Insurance</strong> and machine learning systems at <strong>Tredence</strong>. I care deeply about strong engineering fundamentals, test automation, and shipping software that users trust.
                 </p>
               </div>
 
