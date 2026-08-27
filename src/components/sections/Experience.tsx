@@ -5,9 +5,10 @@ import Image from 'next/image';
 interface ExperienceItem {
   title: string;
   company: string;
+  companyUrl?: string;
   period: string;
   location?: string;
-  highlights: string[];
+  description: string;
   technologies: string[];
   logo?: string;
 }
@@ -18,24 +19,17 @@ const experiences: ExperienceItem[] = [
     company: "IBM",
     period: "May 2026 - Present",
     location: "New York, NY",
-    highlights: [
-      "Owned 0→1 development of an account intelligence platform for a $20T+ AUA financial-services client from ideation through full-stack delivery.",
-      "Earned executive sponsorship that expanded the platform from 1 to 64 financial-services accounts.",
-      "Engineered a spec-driven Python/React/FastAPI system with modular boundaries, strict interfaces, automated validation, and build-time security controls."
-    ],
+    description: "Owned 0→1 development of an account-intelligence platform for a $20T+ AUA financial-services client and expanded it from 1 to 64 accounts through full-stack Python/React/FastAPI delivery.",
     technologies: ["Python", "React", "FastAPI"],
     logo: "/ibm-logo.jpg"
   },
   {
     title: "Founding Engineer",
     company: "Fort Gamma",
+    companyUrl: "https://fortgamma.com",
     period: "Jan 2026 - Present",
     location: "State College, PA",
-    highlights: [
-      "Engineered a production financial-analysis platform for 90+ active users spanning 55K+ lines of TypeScript, 17 feature domains, 34 automated test suites, and 3 deployment environments.",
-      "Led product and engineering across a 7-stage investment research workflow while owning architecture, technical direction, and code review.",
-      "Reduced per-model implementation by 75% across 8 DCF/projection models through a type-safe adapter/seam framework and state machine."
-    ],
+    description: "Engineered and led a production financial-analysis platform for 90+ users, spanning 55K+ TypeScript lines and reducing per-model implementation by 75% across 8 DCF/projection models.",
     technologies: ["TypeScript", "Architecture", "Code Review", "State Machines"]
   },
   {
@@ -43,10 +37,7 @@ const experiences: ExperienceItem[] = [
     company: "Truvo Insurance",
     period: "Oct 2025 - Nov 2025",
     location: "San Francisco, CA",
-    highlights: [
-      "Enabled 100+ insurance premiums by building production Twilio WhatsApp and Facebook Messenger quote-intake workflows in TypeScript and Next.js.",
-      "Enabled ~2-minute customer quote delivery via Twilio by building a guided LLM messaging flow that used OpenAI tool calling to invoke the quote API and save client records."
-    ],
+    description: "Enabled 100+ insurance premiums and ~2-minute quote delivery by building production Twilio WhatsApp/Facebook Messenger workflows in TypeScript/Next.js with guided OpenAI tool-calling automation.",
     technologies: ["TypeScript", "Next.js", "React", "Twilio", "OpenAI Tool Calling"],
     logo: "/truvo.jpeg"
   },
@@ -55,10 +46,7 @@ const experiences: ExperienceItem[] = [
     company: "Tredence Inc.",
     period: "Jun 2025 - Aug 2025",
     location: "San Jose, CA",
-    highlights: [
-      "Accelerated model development by delivering a pip-installable cleaning package with tagged releases and CI/CD in Python using pandas.",
-      "Enabled client home-price forecasting by building a config-driven CatBoost regressor delivering 89.8% predictive fit (0.898 R2) via single-command retraining and evaluation."
-    ],
+    description: "Accelerated model development with a pip-installable Python cleaning package and enabled client home-price forecasting via a config-driven CatBoost regressor achieving 0.898 R2.",
     technologies: ["Python", "Pandas", "Scikit-Learn", "CatBoost", "PyTorch", "CI/CD Pipelines"],
     logo: "/tredence-logo.png"
   }
@@ -96,7 +84,13 @@ export function Experience() {
                         {exp.title}
                       </h3>
                       <h4 className="text-lg font-medium" style={{color: 'var(--primary)'}}>
-                        {exp.company}
+                        {exp.companyUrl ? (
+                          <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                            {exp.company}
+                          </a>
+                        ) : (
+                          exp.company
+                        )}
                       </h4>
                       {exp.location && (
                         <p className="text-sm text-gray-500">{exp.location}</p>
@@ -108,11 +102,9 @@ export function Experience() {
                   </span>
                 </div>
 
-                <ul className="text-gray-700 mb-6 leading-relaxed list-disc list-inside space-y-1">
-                  {exp.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  {exp.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech) => (
