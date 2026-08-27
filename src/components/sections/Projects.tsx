@@ -15,35 +15,20 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Canvas Classmate",
-    description: "AI-powered learning assistant for Canvas LMS that cut search time from 23s to 9s using RAG architecture with Qdrant and OpenAI",
-    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "ChromaDB", "Canvas API"],
+    description: "Achieved 60% faster retrieval finding grading policies (23s to 9s) by integrating an AI workflow layer into Canvas LMS, with 8 FastAPI endpoints on AWS EC2 using Qdrant and Canvas API.",
+    technologies: ["Python", "FastAPI", "Qdrant", "AWS", "Canvas API"],
     githubUrl: "https://github.com/esinocchi/Canvas-Classmate",
     liveUrl: "https://youtu.be/DJJkvD2E_jo",
     imageUrl: "/projects/canvas-classmate.png"
   },
   {
-    title: "Natural Disaster Dashboard",
-    description: "Won 1st place at HackPSU Fall 2024 building an emergency-response dashboard with FEMA, Google Maps, and utility APIs",
-    technologies: ["Python", "TypeScript", "ReactJS", "FEMA API", "TailwindCSS"],
+    title: "HackPSU 1st Overall - Natural Disaster Dashboard",
+    description: "Won 1st of 70 teams at HackPSU Fall 2024 with an emergency-response web application integrating FEMA, Google Maps, and utility-outage APIs into a Next.js dashboard deployed on Vercel.",
+    technologies: ["Python", "TypeScript", "React", "Next.js", "FEMA API"],
     githubUrl: "https://github.com/esinocchi/Natural-Disaster-Dashboard",
     liveUrl: "https://milton-sos.vercel.app/",
     devpostUrl: "https://devpost.com/software/hurricane-dashboard",
     imageUrl: "/projects/disaster-dashboard.png"
-  },
-  {
-    title: "Convolutional Neural Network for Handwritten Digits",
-    description: "Built a CNN achieving 99.25% accuracy on MNIST with PyTorch, and implemented neural networks from scratch using pure NumPy",
-    technologies: ["Python", "PyTorch", "NumPy"],
-    githubUrl: "https://github.com/esinocchi/MNIST-Classification",
-    imageUrl: "/projects/mnist-cnn.png"
-  },
-  {
-    title: "Buddy",
-    description: "AI-powered chatbot for Penn State students featuring RAG with Pinecone for PSU-specific knowledge, streaming responses, and local multi-threaded conversations",
-    technologies: ["Next.js", "React", "TypeScript", "OpenAI API", "Pinecone", "LangChain"],
-    githubUrl: "https://github.com/esinocchi/chat.mlpsu.org",
-    liveUrl: "https://buddy.mlpsu.org/",
-    imageUrl: "/projects/buddy.png"
   }
 ];
 
