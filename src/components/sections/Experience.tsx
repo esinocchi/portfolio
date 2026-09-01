@@ -1,119 +1,117 @@
-'use client';
-
 import Image from 'next/image';
 
 interface ExperienceItem {
   title: string;
   company: string;
+  location: string;
   period: string;
   description: string;
-  technologies: string[];
+  status?: string;
+  roleType?: string;
   logo: string;
+  url?: string;
 }
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Incoming AI Engineer",
+    title: "Forward Deployed Engineer",
     company: "IBM",
-    period: "May 2026 - May 2027",
-    description: "Will be working on a team that builds AI-powered software for IBM's clients.",
-    technologies: [],
-    logo: "/ibm-logo.jpg"
+    location: "New York, NY",
+    period: "May 2026 - Present",
+    description:
+      "Building software for IBM's Financial Services clients.",
+    roleType: "Co-op",
+    logo: "/ibm-logo.jpg",
+    url: "https://www.ibm.com"
+  },
+  {
+    title: "Founding Engineer",
+    company: "Fort Gamma",
+    location: "State College, PA",
+    period: "Jan 2026 - Present",
+    description:
+      "Building financial modeling for every kind of investor",
+    roleType: "Part-time",
+    logo: "/fort-gamma-logo.png",
+    url: "https://fortgamma.com"
   },
   {
     title: "Software Engineer",
     company: "Truvo Insurance",
+    location: "San Francisco, CA",
     period: "Oct 2025 - Nov 2025",
-    description: "Enabled increased insurance premiums by building Twilio-based WhatsApp and Messenger quote workflows that used a state-machine–guided LLM to complete quotes in ~2 minutes.",
-    technologies: ["TypeScript", "Next.js", "React", "Twilio", "OpenAI Tool Calling"],
-    logo: "/truvo.jpeg"
+    description:
+      "Built Twilio-based WhatsApp and Messenger quote workflows, using a state-machine-guided LLM to complete insurance quotes in roughly two minutes.",
+    roleType: "Contract",
+    logo: "/truvo.jpeg",
+    url: "https://www.truvo.com"
   },
   {
     title: "Machine Learning Engineer Intern",
     company: "Tredence Inc.",
+    location: "San Jose, CA",
     period: "Jun 2025 - Aug 2025",
-    description: "Built a pip-installable data cleaning package and a CatBoost home-price forecasting model that achieved 89.8% R2 on client data",
-    technologies: ["Python", "Pandas", "Scikit-Learn", "CatBoost", "PyTorch", "CI/CD Pipelines"],
-    logo: "/tredence-logo.png"
-  },
-  {
-    title: "Co-Founder, Software Engineer",
-    company: "Canvas ClassMate",
-    period: "Nov 2024 - Jul 2025",
-    description: "Built an AI assistant for Canvas LMS that cut search time from 23s to 9s using hybrid retrieval with Qdrant and OpenAI",
-    technologies: ["Python", "FastAPI", "AWS", "Qdrant", "ChromaDB", "Canvas API"],
-    logo: "/canvas-classmate-logo.png"
-  },
-  {
-    title: "Vice President",
-    company: "Machine Learning at Penn State",
-    period: "Sep 2025 - Present",
-    description: "Lead bi-monthly sessions on real-world ML applications and authored the PRD for our Course Planning Assistant project",
-    technologies: ["Leadership", "Product Management", "ML Education"],
-    logo: "/mlpsu-logo.png"
+    description:
+      "Built a pip-installable data cleaning package and a CatBoost home-price forecasting model that hit 89.8% R2 on client data.",
+    roleType: "Internship",
+    logo: "/tredence-logo.png",
+    url: "https://www.tredence.com"
   }
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="section bg-gray-50">
-      <div className="container">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
-            Experience
-          </h2>
+    <section id="experience" className="mx-auto max-w-2xl px-6">
+      <div className="pb-24">
+        <h2 className="section-label mb-8">Experience</h2>
 
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="card animate-slide-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src={exp.logo}
-                      alt={`${exp.company} logo`}
-                      className={`object-contain rounded`}
-                      width={exp.company === "IBM" ? 48 : exp.company === "Canvas ClassMate" ? 62 : 48}
-                      height={exp.company === "IBM" ? 48 : exp.company === "Canvas ClassMate" ? 62 : 48}
-                    />
+        <div>
+          {experiences.map((exp) => (
+            <div key={`${exp.company}-${exp.period}`} className="py-5 border-b border-border last:border-b-0">
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5 w-9 h-9 flex-shrink-0 overflow-hidden rounded-md border border-border bg-background">
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-x-2 gap-y-0.5">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">
-                        {exp.title}
+                      <h3 className="text-[16px] font-medium">
+                        {exp.title} <span className="text-muted">·{" "}</span>
+                        {exp.url ? (
+                          <a className="prose-link" href={exp.url} target="_blank" rel="noopener noreferrer">
+                            {exp.company}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{exp.company}</span>
+                        )}
+                        {exp.status && (
+                          <span className="ml-2 font-mono text-xs text-muted">({exp.status})</span>
+                        )}
                       </h3>
-                      <h4 className="text-lg font-medium" style={{color: 'var(--primary)'}}>
-                        {exp.company}
-                      </h4>
+                      {exp.roleType && (
+                        <p className="font-mono text-xs text-muted mt-0.5">{exp.roleType}</p>
+                      )}
+                    </div>
+                    <div className="text-right">
+                      <span className="block font-mono text-xs text-muted whitespace-nowrap">{exp.period}</span>
+                      {exp.location && (
+                        <span className="block font-mono text-xs text-muted/80 mt-0.5 whitespace-nowrap">{exp.location}</span>
+                      )}
                     </div>
                   </div>
-                  <span className="text-sm font-medium text-gray-500 mt-2 md:mt-0">
-                    {exp.period}
-                  </span>
-                </div>
-
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {exp.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 rounded text-sm font-medium"
-                      style={{
-                        backgroundColor: 'color-mix(in srgb, var(--primary) 15%, white)',
-                        color: 'var(--primary-dark)'
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted">
+                    {exp.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
