@@ -23,7 +23,7 @@ export function About() {
         </p>
 
         <p className="mt-5 text-[17px] leading-relaxed text-muted">
-          It all started with playing Minecraft at eight years old, with my dad's old PC that was louder than my air conditioner.
+          It all started with playing Minecraft at eight years old, with my dad&apos;s old PC that was louder than my air conditioner.
           Soon enough I was spending countless hours setting up and maintaining a Minecraft server.
         </p>
 
