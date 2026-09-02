@@ -1,128 +1,117 @@
-'use client';
-
 import Image from 'next/image';
 
 interface ExperienceItem {
   title: string;
   company: string;
-  companyUrl?: string;
+  location: string;
   period: string;
-  location?: string;
   description: string;
-  technologies: string[];
-  logo?: string;
+  status?: string;
+  roleType?: string;
+  logo: string;
+  url?: string;
 }
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Forward Deployed Engineer Co-Op",
+    title: "Forward Deployed Engineer",
     company: "IBM",
-    period: "May 2026 - Present",
     location: "New York, NY",
-    description: "Owned 0→1 development of an account-intelligence platform for a $20T+ AUA financial-services client and expanded it from 1 to 64 accounts through full-stack Python/React/FastAPI delivery.",
-    technologies: ["Python", "React", "FastAPI"],
-    logo: "/ibm-logo.jpg"
+    period: "May 2026 - Present",
+    description:
+      "Building software for IBM's Financial Services clients.",
+    roleType: "Co-op",
+    logo: "/ibm-logo.jpg",
+    url: "https://www.ibm.com"
   },
   {
     title: "Founding Engineer",
     company: "Fort Gamma",
-    companyUrl: "https://fortgamma.com",
-    period: "Jan 2026 - Present",
     location: "State College, PA",
-    description: "Engineered and led a production financial-analysis platform for 90+ users, spanning 55K+ TypeScript lines and reducing per-model implementation by 75% across 8 DCF/projection models.",
-    technologies: ["TypeScript", "Architecture", "Code Review", "State Machines"]
+    period: "Jan 2026 - Present",
+    description:
+      "Building financial modeling for every kind of investor",
+    roleType: "Part-time",
+    logo: "/fort-gamma-logo.png",
+    url: "https://fortgamma.com"
   },
   {
     title: "Software Engineer",
     company: "Truvo Insurance",
-    period: "Oct 2025 - Nov 2025",
     location: "San Francisco, CA",
-    description: "Enabled 100+ insurance premiums and ~2-minute quote delivery by building production Twilio WhatsApp/Facebook Messenger workflows in TypeScript/Next.js with guided OpenAI tool-calling automation.",
-    technologies: ["TypeScript", "Next.js", "React", "Twilio", "OpenAI Tool Calling"],
-    logo: "/truvo.jpeg"
+    period: "Oct 2025 - Nov 2025",
+    description:
+      "Built Twilio-based WhatsApp and Messenger quote workflows, using a state-machine-guided LLM to complete insurance quotes in roughly two minutes.",
+    roleType: "Contract",
+    logo: "/truvo.jpeg",
+    url: "https://www.truvo.com"
   },
   {
     title: "Machine Learning Engineer Intern",
     company: "Tredence Inc.",
-    period: "Jun 2025 - Aug 2025",
     location: "San Jose, CA",
-    description: "Accelerated model development with a pip-installable Python cleaning package and enabled client home-price forecasting via a config-driven CatBoost regressor achieving 0.898 R2.",
-    technologies: ["Python", "Pandas", "Scikit-Learn", "CatBoost", "PyTorch", "CI/CD Pipelines"],
-    logo: "/tredence-logo.png"
+    period: "Jun 2025 - Aug 2025",
+    description:
+      "Built a pip-installable data cleaning package and a CatBoost home-price forecasting model that hit 89.8% R2 on client data.",
+    roleType: "Internship",
+    logo: "/tredence-logo.png",
+    url: "https://www.tredence.com"
   }
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="section bg-gray-50">
-      <div className="container">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
-            Experience
-          </h2>
+    <section id="experience" className="mx-auto max-w-2xl px-6">
+      <div className="pb-24">
+        <h2 className="section-label mb-8">Experience</h2>
 
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="card animate-slide-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    {exp.logo && (
-                      <Image
-                        src={exp.logo}
-                        alt={`${exp.company} logo`}
-                        className="object-contain rounded"
-                        width={48}
-                        height={48}
-                      />
-                    )}
+        <div>
+          {experiences.map((exp) => (
+            <div key={`${exp.company}-${exp.period}`} className="py-5 border-b border-border last:border-b-0">
+              <div className="flex items-start gap-4">
+                <div className="mt-0.5 w-9 h-9 flex-shrink-0 overflow-hidden rounded-md border border-border bg-background">
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} logo`}
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-x-2 gap-y-0.5">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">
-                        {exp.title}
-                      </h3>
-                      <h4 className="text-lg font-medium" style={{color: 'var(--primary)'}}>
-                        {exp.companyUrl ? (
-                          <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                      <h3 className="text-[16px] font-medium">
+                        {exp.title} <span className="text-muted">·{" "}</span>
+                        {exp.url ? (
+                          <a className="prose-link" href={exp.url} target="_blank" rel="noopener noreferrer">
                             {exp.company}
                           </a>
                         ) : (
-                          exp.company
+                          <span className="text-muted">{exp.company}</span>
                         )}
-                      </h4>
+                        {exp.status && (
+                          <span className="ml-2 font-mono text-xs text-muted">({exp.status})</span>
+                        )}
+                      </h3>
+                      {exp.roleType && (
+                        <p className="font-mono text-xs text-muted mt-0.5">{exp.roleType}</p>
+                      )}
+                    </div>
+                    <div className="text-right">
+                      <span className="block font-mono text-xs text-muted whitespace-nowrap">{exp.period}</span>
                       {exp.location && (
-                        <p className="text-sm text-gray-500">{exp.location}</p>
+                        <span className="block font-mono text-xs text-muted/80 mt-0.5 whitespace-nowrap">{exp.location}</span>
                       )}
                     </div>
                   </div>
-                  <span className="text-sm font-medium text-gray-500 mt-2 md:mt-0">
-                    {exp.period}
-                  </span>
-                </div>
-
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {exp.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 rounded text-sm font-medium"
-                      style={{
-                        backgroundColor: 'color-mix(in srgb, var(--primary) 15%, white)',
-                        color: 'var(--primary-dark)'
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted">
+                    {exp.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
