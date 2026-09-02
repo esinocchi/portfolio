@@ -23,7 +23,7 @@ export function Navigation() {
             onClick={() => scrollToSection('about')}
             className="text-[15px] font-medium"
           >
-            evan sinocchi
+            Evan Sinocchi
           </button>
 
           <div className="flex gap-6">

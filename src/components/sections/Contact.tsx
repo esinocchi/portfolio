@@ -11,8 +11,7 @@ export function Contact() {
         <h2 className="section-label mb-8">Contact</h2>
 
         <p className="text-[17px] leading-relaxed text-foreground max-w-[60ch]">
-          Always up for a conversation about AI/ML, insurance software, or a
-          half-baked idea. Say hello.
+          Always up to meet new people
         </p>
 
         <div className="mt-6 space-y-2">
@@ -32,7 +31,7 @@ export function Contact() {
         </div>
 
         <footer className="mt-16 pt-8 border-t border-border">
-          <p className="text-[14px] text-muted">~ evan</p>
+          <p className="text-[14px] text-muted">Evan</p>
         </footer>
       </div>
     </section>

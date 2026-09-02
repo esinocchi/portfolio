@@ -15,25 +15,20 @@ export function About() {
         </div>
 
         <p className="text-[17px] leading-relaxed text-foreground">
-          Hi, i&apos;m Evan, a CS student at Penn State working mostly in{" "}
-          <span className="font-medium">AI/ML software</span>. I&apos;ve built{" "}
-          <span className="font-medium">automated insurance quote workflows</span>{" "}
-          at Truvo, <span className="font-medium">ML models at Tredence</span>,
-          co-founded{" "}
-          <a className="prose-link" href="https://github.com/esinocchi/Canvas-Classmate" target="_blank" rel="noopener noreferrer">
-            Canvas Classmate
-          </a>
-          , and serve as{" "}
-          <span className="font-medium">Vice President of ML@PSU</span>.
+          Hi, i&apos;m Evan, a CS student at Penn State. I work as a{" "}
+          <span className="font-medium">forward deployed engineer at IBM</span>{" "}
+          building an account intelligence for financial services clients, a{" "}
+          <span className="font-medium">founding engineer at Fort Gamma</span>,
+          and I&apos;ve built automated twilio insurance quote workflows at Truvo.
         </p>
 
         <p className="mt-5 text-[17px] leading-relaxed text-muted">
-          My interest in computers started around age 8, configuring plugins on
-          a Minecraft server. I still think that itch is basically the whole job.
+          It all started with playing Minecraft at eight years old, with my dad's old PC that was louder than my air conditioner.
+          Soon enough I was spending countless hours setting up and maintaining a Minecraft server.
         </p>
 
         <p className="mt-5 text-[17px] leading-relaxed text-muted">
-          Outside of code I train muay thai, cook, and lift. They teach me the
+          Outside of work I train muay thai, cook, and lift. They teach me the
           same discipline I try to bring to engineering.
         </p>
 
@@ -45,6 +40,10 @@ export function About() {
           or find me on{" "}
           <a className="prose-link" href="https://github.com/esinocchi" target="_blank" rel="noopener noreferrer">
             GitHub
+          </a>
+          {" "}or{" "}
+          <a className="prose-link" href="https://linkedin.com/in/esinocchi" target="_blank" rel="noopener noreferrer">
+            LinkedIn
           </a>
           .
         </p>
