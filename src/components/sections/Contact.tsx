@@ -6,11 +6,11 @@ const contact = [
 
 export function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-2xl px-6">
-      <div className="pb-24">
+    <section id="contact" className="mx-auto max-w-2xl px-5 sm:px-6">
+      <div className="pb-16 sm:pb-24">
         <h2 className="section-label mb-8">Contact</h2>
 
-        <p className="text-[17px] leading-relaxed text-foreground max-w-[60ch]">
+        <p className="max-w-[60ch] text-base leading-relaxed text-foreground sm:text-[17px]">
           Always up to meet new people
         </p>
 

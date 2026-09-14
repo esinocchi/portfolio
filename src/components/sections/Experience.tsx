@@ -61,8 +61,8 @@ const experiences: ExperienceItem[] = [
 
 export function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-2xl px-6">
-      <div className="pb-24">
+    <section id="experience" className="mx-auto max-w-2xl px-5 sm:px-6">
+      <div className="pb-16 sm:pb-24">
         <h2 className="section-label mb-8">Experience</h2>
 
         <div>
@@ -98,7 +98,7 @@ export function Experience() {
                         <p className="font-mono text-xs text-muted mt-0.5">{exp.roleType}</p>
                       )}
                     </div>
-                    <div className="text-right">
+                    <div className="mt-2 text-left sm:mt-0 sm:text-right">
                       <span className="block font-mono text-xs text-muted whitespace-nowrap">{exp.period}</span>
                       {exp.location && (
                         <span className="block font-mono text-xs text-muted/80 mt-0.5 whitespace-nowrap">{exp.location}</span>

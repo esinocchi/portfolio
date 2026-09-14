@@ -54,11 +54,11 @@ function ProjectLinks({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-2xl px-6">
-      <div className="pb-24">
+    <section id="projects" className="mx-auto max-w-2xl px-5 sm:px-6">
+      <div className="pb-16 sm:pb-24">
         <h2 className="section-label mb-8">Selected Work</h2>
 
-        <article className="border-y border-border py-6">
+        <article className="border-y border-border py-5 sm:py-6">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
             <h3 className="text-[17px] font-medium">Fort Gamma</h3>
             <a className="prose-link text-[14px]" href="https://fortgamma.com" target="_blank" rel="noopener noreferrer">
@@ -69,7 +69,7 @@ export function Projects() {
             Investment research is usually fragmented: a filing in one tab, a price chart in another, a spreadsheet somewhere else, and a valuation model that is difficult to revisit. Fort Gamma brings those pieces into one research surface—so the work can move from understanding a business to forming and stress-testing an opinion.
           </p>
 
-          <div className="mt-8 grid gap-8 md:grid-cols-2 md:gap-5">
+          <div className="mt-8 grid gap-7 md:grid-cols-2 md:gap-5">
             <figure>
               <ScreenshotPreview
                 previewSrc="/projects/fort-gamma-visual-overview-focus.png"

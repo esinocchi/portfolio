@@ -78,7 +78,7 @@ export function ScreenshotPreview({
           <div className="relative w-full rounded-md border border-border bg-background p-2 shadow-2xl sm:p-3">
             <button
               type="button"
-              className="absolute right-4 top-4 z-10 rounded-sm bg-background/95 px-3 py-2 text-[13px] text-foreground shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+              className="absolute right-4 top-4 z-10 min-h-11 rounded-sm bg-background/95 px-3 py-2 text-[13px] text-foreground shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
               onClick={() => setIsOpen(false)}
               autoFocus
             >
