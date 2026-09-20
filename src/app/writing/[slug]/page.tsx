@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Github } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { Navigation } from '@/components/Navigation';
 import { articles, getArticle } from '@/lib/writing';
@@ -40,6 +41,15 @@ export default async function ArticlePage({ params }: Props) {
           <h1 className="mt-4 max-w-[18ch] text-3xl font-medium leading-tight tracking-tight sm:text-[2.5rem]">{article.title}</h1>
           <p className="mt-5 text-base leading-relaxed text-muted">{article.subtitle}</p>
           <p className="mt-2 text-sm text-muted"><time dateTime={article.date}>{article.dateLabel}</time><span aria-hidden="true"> · </span>{article.readMinutes} min read</p>
+          <a
+            href={article.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View this article's project on GitHub"
+            className="-ml-2 mt-3 inline-flex h-10 w-10 items-center justify-center rounded text-muted transition-colors hover:text-foreground"
+          >
+            <Github aria-hidden="true" size={18} strokeWidth={1.75} />
+          </a>
         </header>
         <div className="article-prose pt-8 sm:pt-10"><JevCaseStudy /></div>
         <footer className="mt-16 border-t border-border pt-8"><Link href="/writing" className="prose-link text-sm">← Back to writing</Link></footer>

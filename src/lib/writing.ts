@@ -4,9 +4,10 @@ export const articles = [
     title: "Can a specialist model choose an agent's tools?",
     subtitle: 'Two Jev experiments',
     description: 'Two Jev experiments separate a fast, low-cost routing result from the performance of an agent using a tool prefilter.',
+    githubUrl: 'https://github.com/esinocchi/jev-tool-router',
     date: '2026-09-20',
     dateLabel: 'September 20, 2026',
-    readMinutes: 6,
+    readMinutes: 7,
   },
 ] as const;
 
