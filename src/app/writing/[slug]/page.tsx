@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${article.title} | Evan Sinocchi`,
     description: article.description,
     alternates: { canonical: url },
-    openGraph: { title: article.title, description: article.description, url, type: 'article', publishedTime: article.date, images: ['/profile.jpg'] },
-    twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: ['/profile.jpg'] },
+    openGraph: { title: article.title, description: article.description, url, type: 'article', publishedTime: article.date, images: [{ url: `${url}/opengraph-image`, width: 1200, height: 630, alt: `${article.title} — ${article.subtitle}, ${article.dateLabel}, ${article.readMinutes} min read` }] },
+    twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: [`${url}/opengraph-image`] },
   };
 }
 
@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }: Props) {
         <header className="mt-12 border-b border-border pb-8 sm:mt-16 sm:pb-10">
           <p className="section-label">Case study</p>
           <h1 className="mt-4 max-w-[18ch] text-3xl font-medium leading-tight tracking-tight sm:text-[2.5rem]">{article.title}</h1>
-          <p className="mt-5 text-base leading-relaxed text-muted">Two Jev experiments</p>
+          <p className="mt-5 text-base leading-relaxed text-muted">{article.subtitle}</p>
           <p className="mt-2 text-sm text-muted"><time dateTime={article.date}>{article.dateLabel}</time><span aria-hidden="true"> · </span>{article.readMinutes} min read</p>
         </header>
         <div className="article-prose pt-8 sm:pt-10"><JevCaseStudy /></div>

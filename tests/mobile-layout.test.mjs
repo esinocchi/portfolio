@@ -11,6 +11,12 @@ test('navigation has a stacked, touch-friendly mobile layout', async () => {
   assert.match(navigation, /min-h-11/);
 });
 
+test('About navigation returns to the top of the home page', async () => {
+  const navigation = await readSource('src/components/Navigation.tsx');
+
+  assert.match(navigation, /\{ href: '\/', label: 'About' \}/);
+});
+
 test('experience metadata moves below the role on narrow screens', async () => {
   const experience = await readSource('src/components/sections/Experience.tsx');
 

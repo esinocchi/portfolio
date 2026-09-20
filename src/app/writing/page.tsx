@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: 'Writing | Evan Sinocchi',
   description: 'Case studies and notes on engineering, AI, business, and the questions behind the work.',
   alternates: { canonical: '/writing' },
-  openGraph: { title: 'Writing | Evan Sinocchi', description: 'Case studies and notes on engineering, AI, business, and the questions behind the work.', url: '/writing', type: 'website', images: ['/profile.jpg'] },
-  twitter: { card: 'summary_large_image', title: 'Writing | Evan Sinocchi', description: 'Case studies and notes on engineering, AI, business, and the questions behind the work.', images: ['/profile.jpg'] },
+  openGraph: { title: 'Writing | Evan Sinocchi', description: 'Case studies and notes on engineering, AI, business, and the questions behind the work.', url: '/writing', type: 'website', images: [{ url: '/og-writing.png', width: 1200, height: 630, alt: 'Writing by Evan Sinocchi' }] },
+  twitter: { card: 'summary_large_image', title: 'Writing | Evan Sinocchi', description: 'Case studies and notes on engineering, AI, business, and the questions behind the work.', images: ['/og-writing.png'] },
 };
 
 export default function WritingPage() {

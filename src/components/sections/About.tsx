@@ -16,7 +16,7 @@ export function About() {
 
         <p className="text-base leading-relaxed text-foreground sm:text-[17px]">
           Hi, i&apos;m Evan, a CS student at Penn State. I work as a{" "}
-          <span className="font-medium">forward deployed engineer at IBM</span>{" "}
+          <span className="font-medium">Client Engineer Co-Op at IBM</span>{" "}
           building an account intelligence for financial services clients, a{" "}
           <span className="font-medium">founding engineer at Fort Gamma</span>,
           and I&apos;ve built automated twilio insurance quote workflows at Truvo.

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Evan Sinocchi",
     images: [
       {
-        url: "/profile.jpg",
+        url: "/og-home.png",
         width: 1200,
         height: 630,
         alt: "Evan Sinocchi",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: "Evan Sinocchi",
     images: [
       {
-        url: "/profile.jpg",
+        url: "/og-home.png",
       },
     ],
   },
