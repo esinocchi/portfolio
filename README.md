@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Writing
+
+Writing lives in this app at `/writing`. To add an article, add its title, description, date, estimated reading minutes, and slug to `src/lib/writing.ts`, create a source-controlled article component with a brief summary at the beginning in `src/app/writing/[slug]/`, and render it from `src/app/writing/[slug]/page.tsx`. Put article figures in `public/writing/<slug>/`. The index, homepage preview, static routes, and sitemap read from the article list.
+
+Set `NEXT_PUBLIC_SITE_URL` to the production origin if it changes from `https://esinocchi.me`; canonical URLs, social metadata, and the sitemap use that origin.
+
 ## Getting Started
 
 First, run the development server:

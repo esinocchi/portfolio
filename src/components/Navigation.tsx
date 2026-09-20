@@ -1,40 +1,34 @@
-'use client';
+import Link from 'next/link';
 
 const navItems = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'contact', label: 'Contact' }
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/#contact', label: 'Contact' }
 ];
 
 export function Navigation() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <nav className="w-full">
+    <nav aria-label="Main navigation" className="w-full">
       <div className="mx-auto max-w-2xl px-5 py-6 sm:px-6 sm:py-10">
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <button
-            onClick={() => scrollToSection('about')}
-            className="min-h-11 text-[15px] font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+          <Link
+            href="/#about"
+            className="flex min-h-11 items-center text-[15px] font-medium focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
           >
             Evan Sinocchi
-          </button>
+          </Link>
 
-          <div className="flex w-full items-center justify-between sm:w-auto sm:gap-6">
+          <div className="flex w-full flex-wrap items-center gap-x-3 sm:w-auto sm:gap-5">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="min-h-11 text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex min-h-11 items-center text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
