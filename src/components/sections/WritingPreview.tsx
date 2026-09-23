@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { articles } from '@/lib/writing';
+import { getArticles } from '@/lib/writing';
 
 export function WritingPreview() {
-  const article = articles[0];
+  const [article] = getArticles();
   return (
     <section id="writing" className="mx-auto max-w-2xl px-5 sm:px-6">
       <div className="pb-16 sm:pb-24">

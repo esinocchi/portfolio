@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
-import { articles } from '@/lib/writing';
+import { getArticles } from '@/lib/writing';
 
 export const metadata: Metadata = {
   title: 'Writing | Evan Sinocchi',
@@ -20,7 +20,7 @@ export default function WritingPage() {
         <h1 className="mt-4 text-3xl font-medium tracking-tight sm:text-4xl">Writing</h1>
         <p className="mt-5 max-w-[55ch] text-base leading-relaxed text-muted">Case studies and notes on engineering, AI, business, and the questions behind the work.</p>
         <div className="mt-12 border-t border-border sm:mt-16">
-          {articles.map((article) => (
+          {getArticles().map((article) => (
             <article key={article.slug} className="border-b border-border">
               <Link href={`/writing/${article.slug}`} className="group block py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:py-7">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
