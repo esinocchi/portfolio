@@ -14,7 +14,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Client Engineer Co-Op",
+    title: "AI Engineer Co-Op",
     company: "IBM",
     location: "New York, NY",
     period: "May 2026 - Present",
